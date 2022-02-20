@@ -6,8 +6,6 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
 
 1.  **Clone this repo**
 
-    Use the nuxt CLI to create a new site, specifying the [default starter](https://v3.nuxtjs.org/getting-started/installation)
-
     ```shell
     $ git clone git@github.com:justerhan/nuxt3-starter-codyhouse.git
     ```
