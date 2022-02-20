@@ -9,8 +9,7 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
     Use the nuxt CLI to create a new site, specifying the [default starter](https://v3.nuxtjs.org/getting-started/installation)
 
     ```shell
-    # create a new Gatsby site using the default starter
-    $ npx nuxi init nuxt3-codyhouse-starter
+    $ git clone git@github.com:justerhan/nuxt3-starter-codyhouse.git
     ```
 
 2.  **Start developing.**
@@ -19,16 +18,16 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
 
     ```shell
     cd nuxt3-codyhouse-starter/
-    yarn dev
+    yarn install && yarn dev
     ```
 
 3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:3000`!
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.vue`. Save your changes and the browser will update in real time!
+    Open the `nuxt3-codyhouse-starter` directory in your code editor of choice and edit `pages/index.vue`. Save your changes and the browser will update in real time!
 
-    By default, the codyhouse confetti button in `components/confetti-btn.vue` has been added as an example component. You may want to delete this component and its corresponding SCSS file if you are not using it.
+    By default, the codyhouse 'confetti button' component is included  as an example in `components/confetti-btn.vue`. You may want to delete this component and its corresponding SCSS file if you are not using it.
 
 
 4. **Importing a new codyhouse component**
@@ -36,13 +35,15 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
    2. Place the component SCSS file into `assets/css/codyhouse/main/components/` folder.
    3. Import the new SCSS file by adding a `@use` statement in `assets/css/codyhouse/main/_components.scss`
    4. Create a new vue component by adding a `.vue` file in `./components` folder.
-   5. Add the component HTML in the `<template>` section and copy and paste any component JS into the `mounted()` function of `<script>` 
+   5. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
+   6. Copy and paste the component JS in the `<script>` tag section's `mounted()` function from [codyhouse component library](https://codyhouse.co/ds/components)
+   7. ...modify components as needed to make them dynamic
 
-    By default, `components/confetti-btn.vue` has been added for you as an example. See file comments for more info.
+    By default, `components/confetti-btn.vue` has been added for you as an example component. See comments in that file for more info.
 
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the top-level files and directories you'll see in this Nuxt3 project.
 
     .
     ├── node_modules/
@@ -76,23 +77,21 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── LICENSE.md
     └── README.md
 
+## Important locations
 
-1.  **`assets/`**: The assets/ directory is used to add all the website assets that will be processed by the build tool (Webpack or Vite). This is where we put our codyhouse SCSS files for preprocessing. Ensure that `assets/css/codyhouse/main/_base.scss` has the correct import path.
+1.  **`assets/`**: The assets/ directory is used to add all the website assets that will be processed by the build tool (Webpack or Vite). This is where we put our codyhouse SCSS files for preprocessing. *Ensure that `assets/css/codyhouse/main/_base.scss` has the correct import path.*
 
-2. **`components/`**: The components/ directory is where you put all your Vue components which can then be imported inside your pages or other components. This is where we put our codyhouse component HTML and JS into vue component format. By default, an example confetti button is included. 
+2. **`components/`**: The components/ directory is where you put all your Vue components which can then be imported inside your pages or other components. This is where we put our codyhouse component HTML and JS into a [vue component format](https://codyhouse.co/blog/post/using-the-codyhouse-components-with-vue-jst). By default, an example confetti button component is included. 
 
 3. **`layouts/`**: Page layouts are placed in the layouts/ directory and will be automatically loaded via asynchronous import when used. If you create a layouts/default.vue this will be used for all pages in your app. Other layouts are used by setting a layout property as part of your component's options.
 
 4. **`pages/`**: The pages/ directory is optional, meaning that if you only use app.vue , vue-router won't be included, reducing your application's bundle size. Here we put our index page containing an example codyhouse confetti button.
 
-5. **`public/`**: The public/ directory is directly served at server root and contains public files that have to keep their names (e.g. robots.txt) or likely won't change (e.g. favicon.ico). Here we place codyhouse global scripts such as `pe.js` for progressive enhancement and a global `util.js` used by various codyhouse components.   
+5. **`public/`**: The public/ directory is directly served at server root and contains public files that have to keep their names (e.g. robots.txt) or likely won't change (e.g. favicon.ico). Here we place codyhouse global scripts such as `pe.js` for [progressive enhancement](https://codyhouse.co/ds/docs/components#progressive-enhancement) and a global [`util.js`](https://codyhouse.co/ds/docs/framework/js-utilities) used by various codyhouse components.   
 
 6.  **`nuxt.config.ts`**: The nuxt configuration file. For codyhouse, we added SCSS compiler options.
 
-7.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-8.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project. For codyhouse, we added `codyhouse`, `postcss`, `autoprefixer` and `sass` required for codyhouse.
-
+7.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project. For codyhouse, we added `codyhouse`, `postcss`, `autoprefixer` and `sass` required for codyhouse.
 
 ## 🎓 Learning Nuxt3
 
