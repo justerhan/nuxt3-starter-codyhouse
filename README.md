@@ -21,7 +21,7 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
 
 3.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:4000`!
+    Your site is now running at `http://localhost:3000`!
 
     Open the `nuxt3-codyhouse-starter` directory in your code editor of choice and edit `pages/index.vue`. Save your changes and the browser will update in real time!
 
