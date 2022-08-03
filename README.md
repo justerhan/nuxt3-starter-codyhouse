@@ -1,6 +1,6 @@
-# Nuxt3 + CodyHouse starter
+# Nuxt3 + CodyHouse starter (using Codyframe)
 
-Kick off your project with this boilerplate. This starter ships with the main Nuxt 3 configuration files you might need to get up and running blazing fast with the blazing fast app generator for Vue paired with the [CodyFrame CSS framework](https://codyhouse.co/ds/get-started). Include CodyHouse [components](https://codyhouse.co/ds/components) easily by following their directions on using [components with Vue](https://codyhouse.co/blog/post/using-the-codyhouse-components-with-vue-jst).
+Kick off your project with this boilerplate. This starter ships with the main Nuxt 3 configuration files you might need to get up and running blazing fast with the blazing fast app generator for Vue paired with the [CodyFrame CSS framework](https://codyhouse.co/ds/get-started). Include CodyHouse [components](https://codyhouse.co/ds/components) easily by following the directions below (see step 4).
 
 ## 🚀 Quick start
 
@@ -29,15 +29,41 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
 
 
 4. **Importing a new codyhouse component**
-   1. Make sure that `assets/css/codyhouse/main/_base.scss` has the correct path.
-   2. Place the component SCSS file into `assets/css/codyhouse/main/components/` folder.
-   3. Import the new SCSS file by adding a `@use` statement in `assets/css/codyhouse/main/_components.scss`
-   4. Create a new vue component by adding a `.vue` file in `./components` folder.
-   5. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
-   6. Copy and paste the component JS in the `<script>` tag section's `mounted()` function from [codyhouse component library](https://codyhouse.co/ds/components)
-   7. ...modify components as needed to make them dynamic
 
-    By default, `components/confetti-btn.vue` has been added for you as an example component. See comments in that file for more info.
+    💡 *By default, the 'Confetti Button' component has been added for you by following the steps below. To remove this component delete the following files:*
+
+   1. Place the component SCSS file into `assets/scss/components/` folder.
+   2. Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
+   <br />For example:
+   ```
+   @use 'CODYHOUSE_COMPONENT.scss' as *;
+   ```
+   3. Create a new vue component by adding a new `.vue` file in `./components` folder.
+   4. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
+   5. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
+   6. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
+   ```js
+   loadComponent() {
+                let s = document.createElement("script");
+                // 👇 IMPORTANT 👇 , update component name below
+                s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
+                document.head.appendChild(s);
+                }
+    ```
+   7. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
+   8. ...modify components as needed to make them dynamic
+
+
+5. **Removing the example component**
+
+     *By default, the 'Confetti Button' codyhouse vue component has been added for you. Do the following to remove it:*
+
+    - Delete `assets/scss/components/_1_confetti-button.scss`
+    - Remove the `@use '1_confetti-button' as *;` from the file `assets/scss/components/_index.scss`
+    - Delete `public/js/codyhouse/components/_1_confetti-button.js`
+    - Delete `components/confetti-btn.vue`
+
+
 
 ## 🧐 What's inside?
 
@@ -46,14 +72,14 @@ A quick look at the top-level files and directories you'll see in this Nuxt3 pro
     .
     ├── node_modules/
     ├── assets/
-        ├── css/codyhouse/main/
+        ├── scss/
             ├── components/
                 ├── _1_confetti-button.scss
+                ├── _1_list.scss
+                ├── _index.scss    
             ├── custom-style/
             ├── _base.scss
-            ├── _components.scss
             ├── _custom-style.scss
-            ├── main.scss
             ├── style.scss
     ├── components/
         ├── confetti-btn.vue
@@ -64,6 +90,8 @@ A quick look at the top-level files and directories you'll see in this Nuxt3 pro
         ├── index.vue
     ├── public/
         ├── js/codyhouse/
+            ├── components/
+                ├── _1_confetti-button.js
             ├── pe.js
             ├── util.js
     ├── .gitignore

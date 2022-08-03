@@ -7,9 +7,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "codyhouse-framework": "^3.0.2",
-    "nuxt3": "latest",
-    "postcss": "^8.3.11",
-    "sass": "^1.43.4"
+    "codyhouse-framework": "latest",
+    "nuxt": "npm:nuxt3@latest",
+    "postcss": "^8.4.14",
+    "sass": "latest"
   }
 }

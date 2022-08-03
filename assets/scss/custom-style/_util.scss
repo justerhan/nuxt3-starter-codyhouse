@@ -19,17 +19,3 @@
 //     }
 //   }
 // }
-
-// --------------------------------
-
-// Border
-
-// --------------------------------
-
-:root, [data-theme="dark"] {
-  --color-border-alpha: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.1);
-}
-
-.border-alpha { // utility class
-  border-color: var(--color-border-alpha);
-}

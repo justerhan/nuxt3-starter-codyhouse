@@ -22,7 +22,7 @@
   --font-primary-capital-letter: 1;
 
   // unit - don't modify unless you want to change the typography unit (e.g., from Rem to Em units)
-  --text-unit: var(--text-base-size); // if Em units → --text-unit: var(--text-base-size);
+  --text-unit: var(--text-base-size); // if Em units → --text-unit: 1em;
 }
 
 :root, * {
@@ -37,25 +37,16 @@
   --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
 }
 
-
 @include breakpoint(md) {
   :root {
-    --text-base-size: 1.125rem;
+    --text-base-size: 1.25rem;
     --text-scale-ratio: 1.25;
   }
 }
 
-body {
-  font-family: var(--font-primary);
-}
-
 h1, h2, h3, h4 {
-  font-family: var(--font-primary);
   --heading-font-weight: 700;
 }
-
-// font family
-.font-primary { font-family: var(--font-primary); }
 
 // --------------------------------
 
