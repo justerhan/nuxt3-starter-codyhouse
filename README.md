@@ -25,12 +25,10 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
 
     Open the `nuxt3-codyhouse-starter` directory in your code editor of choice and edit `pages/index.vue`. Save your changes and the browser will update in real time!
 
-    By default, the codyhouse 'confetti button' component is included  as an example in `components/confetti-btn.vue`. You may want to delete this component and its corresponding SCSS file if you are not using it.
+    💡 *By default, the codyhouse 'confetti button' component is included  as an example in `components/confetti-btn.vue`. You may want to delete this component and its corresponding SCSS file if you are not using it.*
 
 
 4. **Importing a new codyhouse component**
-
-    💡 *By default, the 'Confetti Button' component has been added for you by following the steps below. To remove this component delete the following files:*
 
    1. Place the component SCSS file into `assets/scss/components/` folder.
    2. Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
@@ -38,10 +36,10 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
    ```
    @use 'CODYHOUSE_COMPONENT.scss' as *;
    ```
-   3. Create a new vue component by adding a new `.vue` file in `./components` folder.
-   4. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
-   5. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
-   6. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
+   1. Create a new vue component by adding a new `.vue` file in `./components` folder.
+   2. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
+   3. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
+   4. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
    ```js
    loadComponent() {
                 let s = document.createElement("script");
@@ -50,8 +48,8 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
                 document.head.appendChild(s);
                 }
     ```
-   7. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
-   8. ...modify components as needed to make them dynamic
+   1. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
+   2. ...modify components as needed to make them dynamic
 
 
 5. **Removing the example component**
