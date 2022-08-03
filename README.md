@@ -30,16 +30,16 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
 
 4. **Importing a new codyhouse component**
 
-   1. Place the component SCSS file into `assets/scss/components/` folder.
-   2. Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
+   - Place the component SCSS file into `assets/scss/components/` folder.
+   - Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
    <br />For example:
    ```
    @use 'CODYHOUSE_COMPONENT.scss' as *;
    ```
-   1. Create a new vue component by adding a new `.vue` file in `./components` folder.
-   2. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
-   3. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
-   4. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
+   - Create a new vue component by adding a new `.vue` file in `./components` folder.
+   - Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
+   - Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
+   - Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
    
    ```js
    loadComponent() {
@@ -50,8 +50,8 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
     }
     ```
 
-   5. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
-   6. ...modify components as needed to make them dynamic
+   - In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
+   - ...modify components as needed to make them dynamic
 
 
 5. **Removing the example component**
