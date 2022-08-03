@@ -126,3 +126,4 @@ loadComponent() {
 - Remove the `@use '1_confetti-button' as *;` from the file `assets/scss/components/_index.scss`
 - Delete `public/js/codyhouse/components/_1_confetti-button.js`
 - Delete `components/confetti-btn.vue`
+- Remove `<confetti-btn></confetti-btn>` usage in `pages/index.vue`
