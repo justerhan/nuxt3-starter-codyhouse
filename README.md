@@ -40,16 +40,18 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
    2. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
    3. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
    4. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
+   
    ```js
    loadComponent() {
-                let s = document.createElement("script");
-                // 👇 IMPORTANT 👇 , update component name below
-                s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
-                document.head.appendChild(s);
-                }
+        let s = document.createElement("script");
+        // 👇 IMPORTANT 👇 , update component name below
+        s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
+        document.head.appendChild(s);
+    }
     ```
-   1. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
-   2. ...modify components as needed to make them dynamic
+
+   5. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
+   6. ...modify components as needed to make them dynamic
 
 
 5. **Removing the example component**
