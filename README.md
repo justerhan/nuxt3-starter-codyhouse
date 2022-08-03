@@ -95,33 +95,34 @@ Looking for more guidance? Full documentation for Nuxt lives [on the website](ht
 # Advanced
 ## Importing a new codyhouse component
 
-   1. Place the component SCSS file into `assets/scss/components/` folder.
-   2. Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
-   <br />For example:
-   ```
-   @use 'CODYHOUSE_COMPONENT.scss' as *;
-   ```
-   3. Create a new vue component by adding a new `.vue` file in `./components` folder.
-   4. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
-   5. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
-   6. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
-   ```js
-   loadComponent() {
-       let s = document.createElement("script");
-        // 👇 IMPORTANT 👇 , update component name below
-        s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
-        document.head.appendChild(s);
-    }
+1. Place the component SCSS file into `assets/scss/components/` folder.
+2. Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
+<br />For example:
 ```
-   7. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
-   8. ...modify components as needed to make them dynamic
+@use 'CODYHOUSE_COMPONENT.scss' as *;
+```
+3. Create a new vue component by adding a new `.vue` file in `./components` folder.
+4. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
+5. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
+6. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
+```js
+loadComponent() {
+   let s = document.createElement("script");
+    // 👇 IMPORTANT 👇 , update component name below
+    s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
+    document.head.appendChild(s);
+}
+```
+
+7. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
+8. ...modify components as needed to make them dynamic
 
 
 ## Removing the example component
 
-     *By default, the 'Confetti Button' codyhouse vue component has been added for you. Do the following to remove it:*
+*By default, the 'Confetti Button' codyhouse vue component has been added for you. Do the following to remove it:*
 
-    - Delete `assets/scss/components/_1_confetti-button.scss`
-    - Remove the `@use '1_confetti-button' as *;` from the file `assets/scss/components/_index.scss`
-    - Delete `public/js/codyhouse/components/_1_confetti-button.js`
-    - Delete `components/confetti-btn.vue`
+- Delete `assets/scss/components/_1_confetti-button.scss`
+- Remove the `@use '1_confetti-button' as *;` from the file `assets/scss/components/_index.scss`
+- Delete `public/js/codyhouse/components/_1_confetti-button.js`
+- Delete `components/confetti-btn.vue`
