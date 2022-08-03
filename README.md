@@ -25,46 +25,9 @@ Kick off your project with this boilerplate. This starter ships with the main Nu
 
     Open the `nuxt3-codyhouse-starter` directory in your code editor of choice and edit `pages/index.vue`. Save your changes and the browser will update in real time!
 
-    💡 *By default, the codyhouse 'confetti button' component is included  as an example in `components/confetti-btn.vue`. You may want to delete this component and its corresponding SCSS file if you are not using it.*
+    > 💡 *By default, the codyhouse 'confetti button' component is included  as an example in `components/confetti-btn.vue`. To remove this example component, see the removal instructions below.*
 
-
-4. **Importing a new codyhouse component**
-
-   - Place the component SCSS file into `assets/scss/components/` folder.
-   - Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
-   <br />For example:
-   ```
-   @use 'CODYHOUSE_COMPONENT.scss' as *;
-   ```
-   - Create a new vue component by adding a new `.vue` file in `./components` folder.
-   - Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
-   - Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
-   - Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
-   
-   ```js
-   loadComponent() {
-        let s = document.createElement("script");
-        // 👇 IMPORTANT 👇 , update component name below
-        s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
-        document.head.appendChild(s);
-    }
-    ```
-
-   - In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
-   - ...modify components as needed to make them dynamic
-
-
-5. **Removing the example component**
-
-     *By default, the 'Confetti Button' codyhouse vue component has been added for you. Do the following to remove it:*
-
-    - Delete `assets/scss/components/_1_confetti-button.scss`
-    - Remove the `@use '1_confetti-button' as *;` from the file `assets/scss/components/_index.scss`
-    - Delete `public/js/codyhouse/components/_1_confetti-button.js`
-    - Delete `components/confetti-btn.vue`
-
-
-
+---
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in this Nuxt3 project.
@@ -128,3 +91,37 @@ Looking for more guidance? Full documentation for Nuxt lives [on the website](ht
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/justerhan/nuxt3-starter-codyhouse)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/justerhan/nuxt3-starter-codyhouse)
+
+# Advanced
+## Importing a new codyhouse component
+
+   1. Place the component SCSS file into `assets/scss/components/` folder.
+   2. Import the new SCSS file by adding a `@use` statement in `assets/scss/components/_index.scss`.
+   <br />For example:
+   ```
+   @use 'CODYHOUSE_COMPONENT.scss' as *;
+   ```
+   3. Create a new vue component by adding a new `.vue` file in `./components` folder.
+   4. Copy and paste the component HTML into the `<template>` tag section from [codyhouse component library](https://codyhouse.co/ds/components)
+   5. Add the component's javascript file from [codyhouse component library](https://codyhouse.co/ds/components) into `js/codyhouse/components` folder.
+   6. Add a `loadComponent()` wrapper function to the component's Vue file created in step 3:
+   ```js
+   loadComponent() {
+       let s = document.createElement("script");
+        // 👇 IMPORTANT 👇 , update component name below
+        s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
+        document.head.appendChild(s);
+    }
+```
+   7. In the Vue component's `mounted()` function, call the `loadComponent()` function added from the previous step.
+   8. ...modify components as needed to make them dynamic
+
+
+## Removing the example component
+
+     *By default, the 'Confetti Button' codyhouse vue component has been added for you. Do the following to remove it:*
+
+    - Delete `assets/scss/components/_1_confetti-button.scss`
+    - Remove the `@use '1_confetti-button' as *;` from the file `assets/scss/components/_index.scss`
+    - Delete `public/js/codyhouse/components/_1_confetti-button.js`
+    - Delete `components/confetti-btn.vue`
