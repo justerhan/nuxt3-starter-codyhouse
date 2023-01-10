@@ -110,7 +110,7 @@ loadComponent() {
    let s = document.createElement("script");
     // 👇 IMPORTANT 👇 , update component name below
     s.setAttribute("src", "/js/codyhouse/components/CODYHOUSE_COMPONENT.js");
-    document.head.appendChild(s);
+    document.body.appendChild(s);
 }
 ```
 

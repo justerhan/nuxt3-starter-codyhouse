@@ -47,7 +47,7 @@ For example by adding the line:
                 let s = document.createElement("script");
                 // 👇 IMPORTANT 👇 , this is your component file
                 s.setAttribute("src", "/js/codyhouse/components/_1_confetti-button.js");
-                document.head.appendChild(s);
+                document.body.appendChild(s);
             }
         }
     }

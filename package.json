@@ -1,14 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "codyhouse-framework": "latest",
-    "nuxt": "npm:nuxt3@latest",
+    "nuxt": "^3.0.0",
     "postcss": "^8.4.14",
     "sass": "latest"
   }
